@@ -25,6 +25,8 @@ public class Crown : MonoBehaviour
     }
 
 
+    //detect collision with crown gameobject
+    //when player collides, show winscreen
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.CompareTag("Player")){
             GameBehaviour.Instance.ShowWinScreen();

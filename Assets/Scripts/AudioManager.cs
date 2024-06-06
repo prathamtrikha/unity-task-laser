@@ -29,10 +29,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    //PlaySound on win
     public void ResultPlayWinSound() {
         resultSource.PlayOneShot(winSound);
     }
 
+    //PlaySound on lose
     public void ResultPlayLoseSound() {
         resultSource.PlayOneShot(loseSound);
     }
