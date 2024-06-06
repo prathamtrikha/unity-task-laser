@@ -52,6 +52,7 @@ public class PlayerMovementController : MonoBehaviour
    }
 
 
+    //calculate the player movement with inputs of FixedJoyStick
    private void GetMovementInputs() {
     horizontalInput = fixedJoystick.Horizontal;
     verticalInput = fixedJoystick.Vertical;
@@ -63,6 +64,7 @@ public class PlayerMovementController : MonoBehaviour
     }
    }
    
+   //handle player collisions
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.CompareTag("Ground")) {
             isGround = true;
@@ -73,6 +75,7 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
+    //jump logic for the player
    public void PlayerJump() {
     if(isGround){
         rb.AddForce(new Vector3(rb.velocity.x, jumpForce, rb.velocity.z), ForceMode.Impulse);

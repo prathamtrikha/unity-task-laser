@@ -1,11 +1,12 @@
 using UnityEngine;
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float speed ;
+    [SerializeField] private float speed ; //laser object speed
 
     private float countdown = 5f;
     int waveSpawnPoint ;
 
+    //reference to waveSpawn Script
     private WaveSpawner waveSpawner;
 
 
@@ -27,6 +28,8 @@ public class Enemy : MonoBehaviour
     }
 
     private void SetLaserSpeed() {
+        //adjust speed of laser according to the wave
+        //currentIndex tells the wave number starting from 0
         int currentIndex = waveSpawner.currentWaveIndex;
         if(currentIndex == 0){
             speed = 0.8f;

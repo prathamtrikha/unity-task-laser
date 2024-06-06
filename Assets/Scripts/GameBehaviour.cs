@@ -42,11 +42,13 @@ public class GameBehaviour : MonoBehaviour
         StartCoroutine(HideLoadingScreen());
     }
 
+    //Coroutine for hiding the loading screen
     private IEnumerator HideLoadingScreen(){
         yield return new WaitForSeconds(2f);
         LoadingScreenObject.SetActive(false);
     }
 
+    //Show WinScreen
     public void ShowWinScreen() {
         StartCoroutine(StopAll());
         WinScreenObject.SetActive(true);
@@ -54,6 +56,7 @@ public class GameBehaviour : MonoBehaviour
         AudioManager.instance.ResultPlayWinSound();
     }
 
+    //Show LoseScreen
     public void ShowLoseScreen() {
         StartCoroutine(StopAll());
         LoseScreenObject.SetActive(true);
@@ -61,6 +64,7 @@ public class GameBehaviour : MonoBehaviour
         AudioManager.instance.ResultPlayLoseSound();
     }
 
+    //Showing Crown after all the waves
     public void ShowCrownObject() {
         crownObject.SetActive(true);
     }
